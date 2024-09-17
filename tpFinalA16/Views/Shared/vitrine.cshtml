@@ -1,0 +1,39 @@
+﻿@{
+    var produitsOrdonnees = ViewData["produitsOrdonnees"] as List<Produit>;
+    var imagePaths = ViewData["imagePaths"] as List<string>;
+}
+
+@if (produitsOrdonnees != null && produitsOrdonnees.Any())
+{
+    <div class="container-fluid py-5">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            @foreach (var produit in produitsOrdonnees)
+            {
+                var produitIndex = (int)(produit.Id - 1);
+                var imagePath = imagePaths[produitIndex];
+                <div class="col">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="../@imagePath" alt="@produit.Nom">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a asp-controller="Produit" asp-action="TraitementProduitDetail" asp-route-id="@produit.Id">@produit.Nom</a>
+                            </h5>
+                            <p class="card-text">@produit.Prix</p>
+                            @if (produit.Quantite > 0)
+                            {
+                                <form name="addForm" asp-controller="TraitementPanier" asp-action="ProcessRequest" method="POST">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" max="@produit.Quantite" step="1" min="1" name="qty" value="1">
+                                        <button class="btn btn-primary" type="submit">Ajouter</button>
+                                        <input type="hidden" name="id" value="@produit.Id" />
+                                        <input type="hidden" name="action" value="ADD" />
+                                    </div>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}

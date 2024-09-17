@@ -1,0 +1,175 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\1-Shampooing-Bio.jpg" />
+    <None Remove="images\10-Crème-anti-rides.jpg" />
+    <None Remove="images\1001-logo-vercite.png" />
+    <None Remove="images\1002-logo-vercite.png" />
+    <None Remove="images\1003-logo-vercite.png" />
+    <None Remove="images\11-Huile-argan-bio.jpg" />
+    <None Remove="images\12-Barre-énergétique-fruits.jpg" />
+    <None Remove="images\13-Thé-vert-bio.jpg" />
+    <None Remove="images\14-Nettoyant-multi-usages.jpg" />
+    <None Remove="images\15-Savon-naturel-lavande.jpg" />
+    <None Remove="images\16-Muesli-croustillant.jpg" />
+    <None Remove="images\17-Diffuseur-huiles-essentielles.jpg" />
+    <None Remove="images\18-Masque-capillaire-nourrissant.jpg" />
+    <None Remove="images\19-Produit-nettoyage-écologique.jpg" />
+    <None Remove="images\2-Sac-cotton-réutilisable.jpg" />
+    <None Remove="images\20-Miel-biologique.jpg" />
+    <None Remove="images\21-Shampooing-solide-naturel.jpg" />
+    <None Remove="images\22-Bougie-cire-abeille.jpg" />
+    <None Remove="images\23-Café-biologique-équitable.jpg" />
+    <None Remove="images\24-Produits-nettoyage-écologiques-en-vrac.jpg" />
+    <None Remove="images\25-Barres-énergétiques-biologiques.jpg" />
+    <None Remove="images\26-Savon-naturel-avoine.jpg" />
+    <None Remove="images\27-Produits-jardinage-écologiques.jpg" />
+    <None Remove="images\28-Thé-jaune-biologique.jpg" />
+    <None Remove="images\3-Crayons-couleur-recyclés.jpg" />
+    <None Remove="images\4-Bouteille-réutilisable.jpg" />
+    <None Remove="images\5-Détergent-écologique.jpg" />
+    <None Remove="images\6-Crème-hydratante.jpg" />
+    <None Remove="images\7-Mélange-noix.jpg" />
+    <None Remove="images\8-Désodorisant-naturel.jpg" />
+    <None Remove="images\9-Bougie-parfumée.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="images\1-Shampooing-Bio.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\10-Crème-anti-rides.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\1001-logo-vercite.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\1002-logo-vercite.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\1003-logo-vercite.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\11-Huile-argan-bio.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\12-Barre-énergétique-fruits.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\13-Thé-vert-bio.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\14-Nettoyant-multi-usages.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\15-Savon-naturel-lavande.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\16-Muesli-croustillant.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\17-Diffuseur-huiles-essentielles.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\18-Masque-capillaire-nourrissant.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\19-Produit-nettoyage-écologique.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\2-Sac-cotton-réutilisable.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\20-Miel-biologique.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\21-Shampooing-solide-naturel.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\22-Bougie-cire-abeille.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\23-Café-biologique-équitable.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\24-Produits-nettoyage-écologiques-en-vrac.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\25-Barres-énergétiques-biologiques.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\26-Savon-naturel-avoine.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\27-Produits-jardinage-écologiques.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\28-Thé-jaune-biologique.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\3-Crayons-couleur-recyclés.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\4-Bouteille-réutilisable.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\5-Détergent-écologique.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\6-Crème-hydratante.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\7-Mélange-noix.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\8-Désodorisant-naturel.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="images\9-Bougie-parfumée.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.10" />
+  </ItemGroup>
+
+</Project>

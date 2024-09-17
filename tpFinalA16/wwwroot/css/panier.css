@@ -1,0 +1,5 @@
+﻿
+#panier-details {
+    display: none;
+    transform: translateX(-100%) !important;
+}

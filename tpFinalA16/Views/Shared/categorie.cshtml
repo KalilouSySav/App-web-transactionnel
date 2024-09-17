@@ -1,0 +1,37 @@
+﻿<div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Trouvez tout ce qu'il vous faut dans notre catalogue !</h2>
+
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        @foreach (var categorie in ViewBag.Categories)
+        {
+            <a asp-controller="Produit" asp-action="TraitementRechercheProduit" asp-route-filtreCategorie="@categorie" style="text-decoration: none">
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">@categorie</h3>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="rounded-circle border border-white" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M6 4l6 16l6 -16" />
+                                    </svg>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                                    <small>Vercité</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="bi me-2" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor">
+                                        <path fill="none" d="M0 0h24v24H0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M7 13l5 5L22 6" />
+                                    </svg>
+                                    <small>Éco-responsable</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        }
+    </div> <!-- Fermeture de la div.container -->
+</div>

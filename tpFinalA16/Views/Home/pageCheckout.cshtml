@@ -1,0 +1,53 @@
+﻿<br />
+<br />
+<br />
+<div class="container">
+    <font face="Times New Roman, Times" size="+3">
+        Page Paiement Vertcité
+    </font>
+    <hr />
+    <p>
+
+        <center>
+            <table border="0" cellpadding="0" width="100%" bgcolor="#FFFFFF">
+                <tr>
+                    <td></td>
+                    <td><b>NOM</b></td>
+                    <td><b>PRIX</b></td>
+                    <td><b>QUANTITÉ</b></td>
+                    <td></td>
+                </tr>
+                @if (ViewData["shoppingcart"] is List<LigneDeCommande> shoppingcart)
+                {
+                    foreach (var anOrder in shoppingcart)
+                    {
+                        <tr>
+                            <td></td>
+                            <td><b>@anOrder.Produit.Nom</b></td>
+                            <td><b>@anOrder.PrixUnitaire</b></td>
+                            <td><b>@anOrder.Quantite</b></td>
+                            <td></td>
+                        </tr>
+                    }
+                }
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><b>TOTAL</b></td>
+                    <td><b>$@(ViewData["amount"])</b></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="5">
+                        
+                            <a class="btn btn-outline-success" asp-action="pageConfirmationAchat" asp-controller="TraitementPanier">Poursuivre</a>                        
+                    </td>
+                </tr>
+            </table>
+            <p>
+                <br /><br />
+                <br /><br />
+                <a asp-controller="Home" asp-action="pageAfficherListeProduits">Continuer votre magasinage!</a>
+        </center>
+    </p>
+</div>

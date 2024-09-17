@@ -1,0 +1,41 @@
+﻿
+.container {
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-lg-8 {
+    max-width: 66.666667%;
+}
+
+.col-lg-4 {
+    max-width: 33.333333%;
+}
+
+.form-container {
+    position: fixed;
+    width: 33.333333%;
+    padding: 15px;
+    height: 65%;
+    overflow-y: auto;
+}
+
+    .form-container form {
+        margin-bottom: 0;
+    }
+
+.content-container {
+    margin-left: 33.333333%;
+    width: 66.666667%;
+    padding: 15px;
+}

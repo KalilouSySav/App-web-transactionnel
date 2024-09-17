@@ -1,0 +1,19 @@
+﻿@{
+    bool aucunProduitTrouve = true;
+}
+
+@Html.Partial("panier")
+
+<br />
+<br />
+<div class="container">
+    @if (aucunProduitTrouve)
+    {
+        <h1 class="display-6">Il n'y a pas de produit correspondant à votre recherche </h1>
+        <p class="lead">Veuillez réessayer avec des termes et/ou des filtres différents.</p>
+        <br />
+
+        <br />
+        <p><a href="TraitementRechercheProduit?stockDisponible=true">Effectuer une autre recherche</a></p>
+    }
+</div>

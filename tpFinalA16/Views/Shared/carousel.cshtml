@@ -1,0 +1,43 @@
+﻿<!-- Styles personnalisés pour ce modèle -->
+<link href="css/carousel.css" rel="stylesheet">
+<br>
+<br>
+<div class="container">
+    <h2 class="featurette-heading fw-normal lh-1">Découvrez nos produits ! <span class="text-body-secondary">Une large sélection de produits écologiques pour une vie plus verte.</span></h2>
+    <br><br>
+    <main>
+        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-theme="dark">
+            <ol class="carousel-indicators">
+                @for (var i = 0; i < ViewBag.ProduitsDecouverts.Count; i++)
+                {
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="@i" class="@((i == 0) ? "active" : "")"></li>
+                }
+            </ol>
+            <div class="carousel-inner">
+                @for (var i = 0; i < ViewBag.ProduitsDecouverts.Count; i++)
+                {
+                    var produit = ViewBag.ProduitsDecouverts[i];
+                    <div class="carousel-item @(i == 0 ? "active" : "")">
+                        <img src="../@ViewBag.ImagePaths[produit.Id-1]" alt="" class="bd-placeholder-img" width="50%" height="50%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-color)">
+                            <div class="container">
+                                <div class="carousel-caption text-start opacity-75" style="background-color:white; padding-left:5%">
+                                    <h1>@produit.Nom</h1>
+                                    <p class="opacity-75">@($"{produit.Nom} - {produit.Description} - {produit.Categorie}")</p>
+                                    <p><a class="btn btn-lg btn-primary" asp-controller="Produit" asp-action="TraitementProduitDetail" asp-route-id="@produit.Id">Voir plus</a></p>
+                                </div>
+                            </div>
+                    </div>
+                }
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Précédent</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Suivant</span>
+            </button>
+        </div>
+    </main>
+</div>

@@ -1,0 +1,82 @@
+﻿<link href="~/css/rechercheProduitFormulaire.css" rel="stylesheet" />
+
+<form asp-controller="Produit" asp-action="TraitementRechercheProduit" method="get" class="form-container">
+    <div class="mb-3">
+        <label for="nom" class="form-label">Nom du produit :</label>
+        <input type="text" id="nom" name="nomProduit" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label for="filtreCategorie" class="form-label">Filtrer par catégorie :</label>
+        <select name="filtreCategorie" id="filtreCategorie" class="form-select">
+            <option value=""></option>
+            
+                @foreach (var categorie in ViewBag.Categories)
+                {
+                    <option value="@categorie">@categorie</option>
+                }
+            
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="prixMin" class="form-label">Prix minimum :</label>
+        <input type="number" name="prixMin" id="prixMin" min="0" step="0.01" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label for="prixMax" class="form-label">Prix maximum :</label>
+        <input type="number" name="prixMax" id="prixMax" min="0" step="0.01" class="form-control">
+    </div>
+
+    <div id="voirPlusContainer" style="display: none;">
+        <div class="mb-3">
+            <label for="alphabet" class="form-label">Commencant par :</label>
+            <input type="text" name="alphabet" id="alphabet" maxlength="1" pattern="[a-zA-Z]" class="form-control">
+        </div>
+
+        <div class="mb-3 form-check">
+            <input type="checkbox" name="favoris" id="favoris" class="form-check-input" value="true">
+            <label for="favoris" class="form-check-label">Nos favoris</label>
+        </div>
+
+        <div class="mb-3 form-check">
+            <input type="checkbox" name="stockDisponible" id="stockDisponible" checked class="form-check-input" value="true">
+            <label for="stockDisponible" class="form-check-label">En stock</label>
+        </div>
+
+        <fieldset class="mb-3">
+            <legend class="form-label">Tri :</legend>
+            <div class="form-check">
+                <input type="radio" name="tri" id="triAucun" value="" checked class="form-check-input">
+                <label for="triAucun" class="form-check-label">Aucun</label>
+            </div>
+
+            <div class="form-check">
+                <input type="radio" name="tri" id="triNomAsc" value="nameAsc" class="form-check-input">
+                <label for="triNomAsc" class="form-check-label">Nom ascendant</label>
+            </div>
+
+            <div class="form-check">
+                <input type="radio" name="tri" id="triNomDesc" value="nameDesc" class="form-check-input">
+                <label for="triNomDesc" class="form-check-label">Nom descendant</label>
+            </div>
+
+            <div class="form-check">
+                <input type="radio" name="tri" id="triPrixAsc" value="priceAsc" class="form-check-input">
+                <label for="triPrixAsc" class="form-check-label">Prix ascendant</label>
+            </div>
+
+            <div class="form-check">
+                <input type="radio" name="tri" id="triPrixDesc" value="priceDesc" class="form-check-input">
+                <label for="triPrixDesc" class="form-check-label">Prix descendant</label>
+            </div>
+        </fieldset>
+    </div>
+
+    <button type="button" id="voirPlusBtn" class="btn btn-secondary">Voir plus</button>
+
+    <input type="submit" value="Rechercher" class="btn btn-primary">
+</form>
+
+<script src="~/js/rechercheProduitFormulaire.js"></script>

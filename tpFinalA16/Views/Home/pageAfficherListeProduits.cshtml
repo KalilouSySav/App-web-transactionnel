@@ -1,0 +1,17 @@
+﻿<div class="cover-panier">
+    @Html.Partial("panier") 
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4" style="position: fixed">
+            <br /><br /><br />
+            <h1 class="display-6">Rechercher un produit</h1>
+
+            @Html.Partial("rechercheProduitFormulaire")
+        </div>
+
+        <div class="col-lg-8 content-container">
+            @Html.Partial("vitrine") 
+        </div>
+    </div>
+</div>

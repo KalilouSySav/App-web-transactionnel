@@ -1,0 +1,36 @@
+﻿
+.cover-page {
+    background-image: url('../images/1003-logo-vercite.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10%;
+    
+}
+
+.cover-text {
+    color: #ffffff;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cover-panier {
+    position: absolute;
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1000
+}
+
+.cover-button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+}

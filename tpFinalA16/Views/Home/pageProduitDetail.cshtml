@@ -1,0 +1,44 @@
+﻿@{
+    var imagePath = ViewData["imagePath"] as string;
+    var produit = ViewData["produit"] as Produit;
+}
+<div class="cover-panier">
+    @Html.Partial("panier") 
+</div>
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1">
+                <h1>Détails du produit</h1>
+            </h2>
+            <p class="lead">Nom : @produit.Nom</p>
+            <p class="lead">Description : @produit.Description</p>
+            <p class="lead">Catégorie : @produit.Categorie</p>
+            <p class="lead">Fabricant : @produit.Fabricant</p>
+            <p class="lead">Prix : @produit.Prix</p>
+            <p class="lead">Quantité restante : @produit.Quantite</p>
+
+            @if ((int)produit.Quantite > 0)
+            {
+                <form name="addForm" asp-controller="TraitementPanier" asp-action="ProcessRequest" method="POST">
+                    <div class="mb-3">
+                        <label for="qty" class="form-label">Quantité :</label>
+                        <input type="number" max="@produit.Quantite" step="1" min="1" name="qty" id="qty" class="form-control" value="1">
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Ajouter">
+                    <input type="hidden" name="id" value="@produit.Id" />
+                    <input type="hidden" name="action" value="ADD" />
+                </form>
+            }
+
+        </div>
+
+        <div class="col-md-5 order-md-1">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="~/@ViewData["imagePath"]" alt="Placeholder: 500x500">
+        </div>
+    </div>
+    <a asp-controller="Home" asp-action="pageAfficherListeProduits">Retour à la liste de produits</a>
+</div>

@@ -1,0 +1,62 @@
+﻿@{
+    var compteurPanier = ViewData["compteurPanier"] as int? ?? 0;
+    var shoppingCart = ViewData["shoppingCart"] as List<LigneDeCommande>;
+
+}
+
+<link href="~/css/panier.css" rel="stylesheet" />
+
+<div id="panier" class="dropdown">
+    <button id="panier-button" class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+        <span class="panier-count badge bg-success">@compteurPanier</span>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+            <circle cx="9" cy="21" r="1" />
+            <circle cx="20" cy="21" r="1" />
+            <path d="M1 1h4l2.25 12.14A2 2 0 0 0 9 15h10a2 2 0 0 0 1.75-1.86L23 6H6" />
+        </svg>
+    </button>
+    <div id="panier-details" class="dropdown-menu" style="padding: 15px; overflow-y: auto; max-height: 65vh;">
+        <!-- Contenu des détails du panier -->
+        @if (shoppingCart != null && shoppingCart.Count > 0)
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>NOM</th>
+                        <th>PRIX</th>
+                        <th>QUANTITÉ</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (var i = 0; i < shoppingCart.Count; i++)
+                    {
+                        var anOrder = shoppingCart[i];
+                        <tr>
+                            <td><b>@anOrder.Produit.Nom</b></td>
+                            <td><b>@anOrder.PrixUnitaire</b></td>
+                            <td><b>@anOrder.Quantite</b></td>
+                            <td>
+                                <form name="deleteForm" asp-controller="TraitementPanier" asp-action="ProcessRequest" method="POST">
+                                    <input type="submit" value="SUPPRIMER" class="btn btn-danger">
+                                    <input type="hidden" name="delindex" value="@i" />
+                                    <input type="hidden" name="action" value="DELETE" />
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <form name="checkoutForm" asp-controller="TraitementPanier" asp-action="Checkout" method="POST">
+                <input type="hidden" name="action" value="CHECKOUT">
+                <input type="submit" name="Checkout" value="PAYER" class="btn btn-primary">
+            </form>
+        }
+        else
+        {
+            <p class="d-flex lead">Panier vide</p>
+        }
+    </div>
+</div>
+<script src="~/js/panier.js" ></script>

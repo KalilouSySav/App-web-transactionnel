@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  tpfinala16:
+    image: ${DOCKER_REGISTRY-}tpfinala16
+    build:
+      context: .
+      dockerfile: tpFinalA16/Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - sqlserver
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=vertcite;User Id=sa;Password=Your_password123;TrustServerCertificate=True;
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: "Your_password123"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
